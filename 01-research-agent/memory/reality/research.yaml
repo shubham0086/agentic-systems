@@ -1,0 +1,33 @@
+# Reality File: Research Agent
+# Ground-truth claims about how the system works
+
+working:
+  - claim: "ResearcherAgent produces markdown output with structured research"
+    confidence: 95
+    verify: "Run: node index.js --topic 'test' && grep -c '^#' research-test.md"
+
+  - claim: "Response caching prevents duplicate LLM calls for same topic"
+    confidence: 90
+    verify: "Run twice with same topic, check logs for 'Cache hit' message"
+
+  - claim: "Budget enforcement stops execution if cost exceeds BUDGET_USD"
+    confidence: 95
+    verify: "Set BUDGET_USD=0.01, run, confirm BudgetExceededError is raised"
+
+  - claim: "Ollama (localhost:11434) works with zero API keys"
+    confidence: 95
+    verify: "ollama list && curl http://localhost:11434/api/tags | jq ."
+
+  - claim: "Output file is created at research-<topic>.md"
+    confidence: 95
+    verify: "Run node index.js --topic 'test' && ls research-test.md"
+
+stubs:
+  - "OpenAI/Anthropic/Gemini provider integration (currently Ollama only)"
+  - "Streaming output for real-time research progress"
+  - "Multi-source research compilation (currently single LLM call)"
+
+not_wired:
+  - "No database persistence (each run is independent)"
+  - "No citations API (agent generates citations from training, not verified)"
+  - "No fact-checking (trust agent accuracy)"

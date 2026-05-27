@@ -1,0 +1,27 @@
+# Reality File: Test Case Generator
+# Ground-truth claims about how the system works
+
+working:
+  - claim: "TestGeneratorAgent reads file content and specific function name"
+    confidence: 95
+    verify: "Check artifacts function_name and code_content after initialization"
+
+  - claim: "TestGeneratorAgent extracts executable unit tests inside a markdown block"
+    confidence: 90
+    verify: "Run: node index.js --file src/core/Blackboard.js --function summary, check tests/summary.test.js exists and is valid JS"
+
+  - claim: "Response caching prevents duplicate LLM calls on identical function signatures"
+    confidence: 92
+    verify: "Run unit test generator twice with same function, check for 'cache hit' log"
+
+  - claim: "Output suite contains describe and test block structures compatible with Jest"
+    confidence: 95
+    verify: "Search for 'describe(' or 'test(' inside the generated output test file"
+
+stubs:
+  - "Support for typescript test generation (currently writes standard javascript files)"
+  - "Autorun test suite (currently only outputs file, does not run npm run test automatically)"
+
+not_wired:
+  - "Mocking network/API endpoints inside code (requires manual editing of mocks)"
+  - "Testing complex UI react components (focus is on node/javascript functions)"

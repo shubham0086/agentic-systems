@@ -1,0 +1,25 @@
+{
+  "name": "bug-triage-system",
+  "version": "1.0.0",
+  "description": "Clonable agent system: GitHub issue report -> severity + component + team routing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "playwright test"
+  },
+  "keywords": [
+    "agent",
+    "bug-triage",
+    "dag",
+    "issue-routing"
+  ],
+  "author": "You",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

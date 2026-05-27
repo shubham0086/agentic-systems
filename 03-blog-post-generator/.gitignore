@@ -1,0 +1,5 @@
+node_modules/
+.env
+*.log
+blog-post-*.md
+.DS_Store

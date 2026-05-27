@@ -1,0 +1,26 @@
+# Reality File: Bug Triage System
+# Ground-truth claims about how the system works
+
+working:
+  - claim: "DAGRunner coordinates Classification and Routing agents topologically"
+    confidence: 95
+    verify: "Run: node index.js --issue 'test issue', confirm logs show execution Classifier → Router"
+
+  - claim: "ClassifierAgent parses issue description and sets classification artifact"
+    confidence: 90
+    verify: "Check that classification contains severity, component, and confidence fields"
+
+  - claim: "RouterAgent uses classification results from the Classifier agent"
+    confidence: 95
+    verify: "Check that routing artifact contains suggested_team, reasoning, and next_action fields"
+
+  - claim: "Response caching prevents duplicate LLM calls on identical issue reports"
+    confidence: 92
+    verify: "Run bug triage twice with same issue, check for 'cache hit' log"
+
+stubs:
+  - "Autocreate GitHub labels/milestones (currently only outputs report, does not call GitHub API)"
+  - "Slack webhook alert on critical issues (no active webhook integration)"
+
+not_wired:
+  - "Machine learning based issue clustering (processes issues individually)"

@@ -1,0 +1,27 @@
+# Reality File: Blog Post Generator
+# Ground-truth claims about how the system works
+
+working:
+  - claim: "DAGRunner coordinates outline planning, section research, and draft compilation"
+    confidence: 95
+    verify: "Run: node index.js --topic 'test', confirm logs show execution Planner → Researcher → Writer"
+
+  - claim: "PlannerAgent produces an outline with multiple logical sections"
+    confidence: 92
+    verify: "Verify outline artifact is populated with section objects after Planner execution"
+
+  - claim: "ResearcherAgent performs queries for each section in the outline"
+    confidence: 90
+    verify: "Verify research_summaries contains content for each planned section"
+
+  - claim: "WriterAgent compiles section findings into a unified markdown file"
+    confidence: 95
+    verify: "Check if blog_post artifact is written to output file and contains proper heading structures"
+
+stubs:
+  - "SEO meta tags generation (currently writes only blog post body)"
+  - "Interactive outline review (currently proceeds without human-in-the-loop approval)"
+
+not_wired:
+  - "Live publication via Dev.to or Medium APIs"
+  - "Adding external stock images automatically"

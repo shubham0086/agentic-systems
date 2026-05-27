@@ -1,0 +1,27 @@
+# Reality File: Code Reviewer
+# Ground-truth claims about how the system works
+
+working:
+  - claim: "DAGRunner executes Reviewer and Suggester agents in topological order"
+    confidence: 95
+    verify: "Run: node index.js --file src/core/BaseAgent.js, check console logs for 'Execution order: Reviewer → Suggester'"
+
+  - claim: "ReviewerAgent output is correctly parsed into a structured JSON review"
+    confidence: 90
+    verify: "Check if reviewer_output artifact is set with violations, improvements, and style arrays"
+
+  - claim: "SuggesterAgent incorporates original code and reviewer notes from context"
+    confidence: 95
+    verify: "Verify Suggester output contains specific refactored blocks targeting violations"
+
+  - claim: "Budget guard halts execution if cost exceeds limit"
+    confidence: 95
+    verify: "Set BUDGET_USD=0.001, run reviewer, verify cost limit error is thrown"
+
+stubs:
+  - "Autofix capability (currently only suggests fixes in markdown output, does not edit files directly)"
+  - "Support for multi-file codebases (currently processes one file per run)"
+
+not_wired:
+  - "No deep semantic search of imported packages"
+  - "No integration with local git diff (must specify file path manually)"

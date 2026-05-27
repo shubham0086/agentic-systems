@@ -1,0 +1,25 @@
+{
+  "name": "blog-post-generator",
+  "version": "1.0.0",
+  "description": "Clonable agent system: outline, research, and write technical articles",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "playwright test"
+  },
+  "keywords": [
+    "agent",
+    "blog-generator",
+    "dag",
+    "content-pipeline"
+  ],
+  "author": "You",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
