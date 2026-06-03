@@ -1,6 +1,6 @@
 # Bug Triage System — Automated Issue Routing
 
-**Clonable System 05** — An automated ticket routing and bug classification system that uses a 2-agent Directed Acyclic Graph (DAG) to parse inbound issues, classify severity and component, and assign them to the correct engineering team with debugging next steps.
+An automated ticket routing and bug classification system that uses a 2-agent Directed Acyclic Graph (DAG) to parse inbound issues, classify severity and component, and assign them to the correct engineering team with debugging next steps.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
@@ -28,7 +28,7 @@ Structured JSON Triage Report
 ## Key Features
 
 1. **DAG Coordination**: Topologically coordinates Classifier → Router execution using Kahn's algorithm.
-2. **Deterministic Outputs**: Employs strict JSON formatting and parsing fallbacks to guarantee robust structured data responses.
+2. **Deterministic Outputs**: Uses strict JSON formatting with fallback parsing.
 3. **Smart Routing Logic**: RouterAgent combines original issue details with structured tags to make intelligent, contextual assignments.
 4. **Session-Level Response Caching**: Skips duplicate LLM requests for identical tickets, reducing API expenses.
 5. **Cost Guardians**: Aborts execution if the running API costs exceed the specified budget.

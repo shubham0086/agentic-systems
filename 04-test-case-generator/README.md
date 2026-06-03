@@ -1,6 +1,6 @@
 # Test Case Generator — Automated Unit Testing
 
-**Clonable System 04** — An automated test generation tool that parses function signatures and docstrings to write comprehensive Jest test suites covering happy paths, edge cases, and error handling.
+An automated test generation tool that parses function signatures and docstrings to write Jest test suites covering happy paths, edge cases, and error handling.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
@@ -25,7 +25,7 @@ tests/calculateCompoundInterest.test.js (includes mock fixtures & edge cases)
 
 1. **Targeted Code Analysis**: Focuses unit test generation on a specific function, avoiding context bloat from entire repositories.
 2. **Comprehensive Test Scaffolding**: Automatically outputs structured tests for happy paths, edge cases (boundaries, empty states), and error catching.
-3. **Regex JSON/Code Isolation**: Employs robust extraction algorithms to isolate unit test code blocks from conversational LLM outputs.
+3. **Regex JSON/Code Isolation**: Parses LLM output to isolate unit test code blocks from conversational LLM outputs.
 4. **Multi-Provider Fallback**: Tries local LLMs (Ollama) first, then falls back to cloud providers (Gemini, OpenRouter, OpenAI, Anthropic).
 5. **Cost Enforcement**: Implements budget checks to prevent excessive resource consumption.
 

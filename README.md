@@ -1,8 +1,12 @@
-# Agentic Systems — Multi-Agent Orchestration Templates
+# Agentic Systems
 
-**5 clonable, production-ready AI agent systems** designed for developers, built using standard Node.js (CommonJS) and optimized for recruiters, technical leads, and AI builders. 
+**5 multi-agent systems you can clone, run, and learn from.**
 
-Each repository showcases enterprise-grade agentic design patterns—including **DAG Orchestration**, **Centralized Blackboard state management**, **Multi-Provider LLM Fallbacks**, and **Response Caching**.
+Each one solves a real task. Each one is a different agent topology: single agent,
+2-agent DAG, 3-agent DAG. Read the code, run it, then modify it. That is the
+intended use.
+
+All systems run offline with zero cost using Ollama. No API key needed to start.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
@@ -10,17 +14,15 @@ Each repository showcases enterprise-grade agentic design patterns—including *
 
 ---
 
-## 🛸 The Showcase Systems
+## The 5 Systems
 
-All systems are fully runnable locally with **zero cost** using Ollama, or configurable with cloud providers (Gemini, OpenRouter, OpenAI, Anthropic).
-
-| System | Architecture | Key Patterns Highlighted | Target Use Case |
+| System | Shape | What it does | Run it |
 | :--- | :--- | :--- | :--- |
-| 📂 **[01 — Research Agent](./01-research-agent)** | Single Agent | Multi-provider routing, Response Caching, Budget Guards | Automates deep-dive topic research to markdown summaries. |
-| 📂 **[02 — Code Reviewer](./02-code-reviewer)** | 2-Agent DAG | DAG Coordination, Graph context, JSON Output validation | Automated code audit and concrete refactoring generator. |
-| 📂 **[03 — Blog Post Generator](./03-blog-post-generator)** | 3-Agent DAG | Loop section-by-section research, Artifact chaining | Outlines, researches, and writes comprehensive blog articles. |
-| 📂 **[04 — Test Case Generator](./04-test-case-generator)** | Single Agent | Regex JSON parser, Cache Hit saves, Unit test scaffolding | Signature + Docstring parsing to complete Jest test suites. |
-| 📂 **[05 — Bug Triage System](./05-bug-triage)** | 2-Agent DAG | Classifier-Router pattern, Confidence scoring | GitHub bug reports categorized and assigned to teams automatically. |
+| **[01 Research Agent](./01-research-agent)** | Single agent | Takes a topic, runs searches, returns a markdown brief | `node index.js --topic "your topic"` |
+| **[02 Code Reviewer](./02-code-reviewer)** | 2-agent DAG | Reads a file, one agent audits, one generates fixes | `node index.js --file src/yourfile.js` |
+| **[03 Blog Post Generator](./03-blog-post-generator)** | 3-agent DAG | Planner outlines, researcher fills in, writer drafts | `node index.js --topic "your topic"` |
+| **[04 Test Case Generator](./04-test-case-generator)** | Single agent | Reads a function signature, writes Jest test cases | `node index.js --file src/core/BaseAgent.js` |
+| **[05 Bug Triage](./05-bug-triage)** | 2-agent DAG | Classifies a bug report, routes it to the right team | `node index.js --issue "Users can't log in"` |
 
 ---
 

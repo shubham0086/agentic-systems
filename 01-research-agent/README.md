@@ -1,6 +1,6 @@
 # Research Agent
 
-**Clonable System 01** — Single-agent system that researches any topic and outputs a structured markdown summary.
+Single-agent system that researches any topic and outputs a structured markdown summary.
 
 ## What It Does
 

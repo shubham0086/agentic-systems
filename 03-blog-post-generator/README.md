@@ -1,6 +1,6 @@
 # Blog Post Generator — Multi-Agent Content Pipeline
 
-**Clonable System 03** — A professional content automation pipeline that outlines, researches, and writes deep-dive technical articles using a 3-agent dependency graph.
+A 3-agent system that outlines, researches, and writes deep-dive technical articles using a 3-agent dependency graph.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)

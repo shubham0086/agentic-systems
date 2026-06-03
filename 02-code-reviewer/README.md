@@ -1,6 +1,6 @@
 # Code Reviewer — Multi-Agent DAG pipeline
 
-**Clonable System 02** — A production-ready code review pipeline that uses a 2-agent Directed Acyclic Graph (DAG) to analyze source files, extract security/architectural violations, and generate concrete refactoring suggestions with before/after diffs.
+A 2-agent Directed Acyclic Graph (DAG) to analyze source files, extract security/architectural violations, and generate concrete refactoring suggestions with before/after diffs.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
@@ -28,7 +28,7 @@ Combined Markdown Review Report
 ## Key Features
 
 1. **DAG Orchestration**: Uses Kahn's algorithm topological sorting to execute agents sequentially based on their dependencies.
-2. **Structured JSON Validation**: Enforces clean JSON output from LLMs with robust regex-based extraction and fallback parsing.
+2. **Structured JSON Validation**: Enforces clean JSON output from LLMs with regex extraction with JSON fallback.
 3. **Multi-Provider Fallback**: Tries local LLMs (Ollama) first, then falls back to cloud providers (Gemini, OpenRouter, OpenAI, Anthropic).
 4. **Session-Level Response Caching**: Saves token costs by caching results on identical code snippets.
 5. **Cost Tracking & Budget Guards**: Terminates execution immediately if API usage exceeds the threshold.
