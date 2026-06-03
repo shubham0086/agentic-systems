@@ -64,7 +64,65 @@ If you already understand agents:
 
 ---
 
+## Visual Architecture
+
+**How the 5 systems relate — shared core, different agent topologies:**
+
+```mermaid
+graph LR
+    INPUT([Goal / Input]) --> CORE
+
+    subgraph CORE ["Shared Core"]
+        direction TB
+        BB[Blackboard\ncentralized state]
+        DAG[DAGRunner\nKahn's algorithm]
+        BASE[BaseAgent\nLLM + cache + circuit breaker]
+    end
+
+    subgraph SYSTEMS ["5 Systems"]
+        direction TB
+        S1[01 Research Agent\nsingle agent]
+        S2[02 Code Reviewer\n2-agent DAG]
+        S3[03 Blog Generator\n3-agent DAG]
+        S4[04 Test Generator\nsingle agent]
+        S5[05 Bug Triage\n2-agent DAG]
+    end
+
+    CORE --> SYSTEMS
+    SYSTEMS --> OUT([Artifact\nmarkdown / tests / triage])
+
+    style INPUT fill:#0f172a,stroke:#6366f1,color:#818cf8
+    style BB   fill:#1e293b,stroke:#6366f1,color:#f8fafc
+    style DAG  fill:#1e293b,stroke:#6366f1,color:#f8fafc
+    style BASE fill:#1e293b,stroke:#818cf8,color:#f8fafc
+    style S1   fill:#1e293b,stroke:#a855f7,color:#f8fafc
+    style S2   fill:#1e293b,stroke:#a855f7,color:#f8fafc
+    style S3   fill:#1e293b,stroke:#a855f7,color:#f8fafc
+    style S4   fill:#1e293b,stroke:#a855f7,color:#f8fafc
+    style S5   fill:#1e293b,stroke:#a855f7,color:#f8fafc
+    style OUT  fill:#0f172a,stroke:#10b981,color:#10b981
+```
+
+**Architecture reference (5 scaffolds + shared core annotated):**
+
+![Agentic Systems Architecture Reference](diagrams/agentic-systems-flowchart.svg)
+
+**Animated system map (open in browser):**
+
+The `visual/` folder contains `visual-systems.html` — a standalone animated diagram showing all 5 agent systems and how the shared core wires them together. No dependencies, no build step.
+
+```
+open visual/visual-systems.html
+# or: python -m http.server 8080 → localhost:8080/visual/visual-systems.html
+```
+
+> Full portfolio case study with live animations: [shubham0086.github.io/MyPortfolio.github.io/projects/agentic-systems.html](https://shubham0086.github.io/MyPortfolio.github.io/projects/agentic-systems.html)
+
+---
+
 ## ⚙️ Standardized Core Architecture
+
+![Agentic Systems Core Framework Flowchart](./diagrams/core-architecture.svg)
 
 Every template in this repository uses a unified core directory (`src/core/`) to maintain consistency and ease of learning:
 

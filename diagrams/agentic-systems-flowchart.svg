@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="100%" height="100%" style="background-color:#0c0f19; font-family:'Space Grotesk',-apple-system,sans-serif;">
+  <defs>
+    <pattern id="as-dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1e293b" fill-opacity="0.5"/>
+    </pattern>
+    <style>
+      .as-flow { stroke-dasharray:6,9; animation:as-d 1.9s linear infinite; }
+      @keyframes as-d { to { stroke-dashoffset:-15; } }
+      .as-ind { animation:as-i 2s ease-in-out infinite; }
+      @keyframes as-i { 0%,100%{r:3.5;fill-opacity:.5;} 50%{r:5;fill-opacity:1;} }
+    </style>
+    <marker id="as-arr-g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 2 L7 5 L0 8z" fill="#10b981"/>
+    </marker>
+    <marker id="as-arr-i" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 2 L7 5 L0 8z" fill="#6366f1"/>
+    </marker>
+    <marker id="as-arr-s" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 2 L7 5 L0 8z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="580" fill="#0c0f19"/>
+  <rect width="900" height="580" fill="url(#as-dots)"/>
+
+  <!-- ── HEADER ── -->
+  <rect x="0" y="0" width="900" height="58" fill="#0f172a"/>
+  <rect x="0" y="57" width="900" height="1" fill="#1e293b"/>
+  <rect x="0" y="0" width="3" height="58" fill="#10b981"/>
+  <text x="22" y="26" fill="#f8fafc" font-size="16" font-weight="700" letter-spacing="-.4">AGENTIC SYSTEMS — 5 RUNNABLE SCAFFOLDS</text>
+  <text x="22" y="46" fill="#64748b" font-size="11">Blackboard state architecture · Local Ollama compatible · Extracted from production systems</text>
+  <rect x="730" y="15" width="152" height="26" rx="4" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1"/>
+  <text x="806" y="32" fill="#10b981" font-size="10" font-weight="600" text-anchor="middle">Node.js + Ollama</text>
+
+  <!-- ── SHARED BLACKBOARD (TOP) ── -->
+  <text x="24" y="74" fill="#475569" font-size="9" font-weight="600" letter-spacing="1.5">SHARED BLACKBOARD STATE (All Agents Read/Write Here)</text>
+  <rect x="15" y="82" width="870" height="52" rx="8" fill="#0a1020" stroke="#334155" stroke-width="1.5"/>
+  <text x="30" y="102" fill="#94a3b8" font-size="10.5" font-weight="600">Blackboard Keys:</text>
+  <!-- key pills -->
+  <rect x="145" y="91" width="85" height="20" rx="4" fill="rgba(99,102,241,0.1)" stroke="rgba(99,102,241,0.25)" stroke-width="1"/>
+  <text x="187" y="105" fill="#818cf8" font-size="9.5" font-weight="600" text-anchor="middle">task_queue[]</text>
+
+  <rect x="238" y="91" width="75" height="20" rx="4" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1"/>
+  <text x="275" y="105" fill="#4ade80" font-size="9.5" font-weight="600" text-anchor="middle">agent_state</text>
+
+  <rect x="321" y="91" width="90" height="20" rx="4" fill="rgba(234,179,8,0.1)" stroke="rgba(234,179,8,0.25)" stroke-width="1"/>
+  <text x="366" y="105" fill="#fbbf24" font-size="9.5" font-weight="600" text-anchor="middle">output_buffer</text>
+
+  <rect x="419" y="91" width="90" height="20" rx="4" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.25)" stroke-width="1"/>
+  <text x="464" y="105" fill="#c084fc" font-size="9.5" font-weight="600" text-anchor="middle">review_flags[]</text>
+
+  <rect x="517" y="91" width="85" height="20" rx="4" fill="rgba(56,189,248,0.1)" stroke="rgba(56,189,248,0.25)" stroke-width="1"/>
+  <text x="559" y="105" fill="#7dd3fc" font-size="9.5" font-weight="600" text-anchor="middle">event_log[]</text>
+
+  <rect x="610" y="91" width="100" height="20" rx="4" fill="rgba(148,163,184,0.07)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+  <text x="660" y="105" fill="#94a3b8" font-size="9.5" font-weight="600" text-anchor="middle">llm_context{}</text>
+
+  <text x="30" y="126" fill="#64748b" font-size="9.5">Each scaffold agent reads from and writes to this shared object. Enables multi-agent coordination without direct coupling.</text>
+
+  <!-- Arrows from blackboard down to agent cards -->
+  <path d="M112 134 L112 148" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-s)"/>
+  <path d="M288 134 L288 148" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-s)"/>
+  <path d="M464 134 L464 148" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-s)"/>
+  <path d="M640 134 L640 148" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-s)"/>
+  <path d="M816 134 L816 148" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-s)"/>
+
+  <!-- ── 5 SCAFFOLD CARDS (y=150-305) ── -->
+  <!-- Card width = 160, gap = 12 -->
+  <!-- x positions: 15, 191, 367, 543, 719 -->
+
+  <!-- CARD 1: Reviewer Agent -->
+  <rect x="15" y="150" width="162" height="150" rx="8" fill="#0f172a" stroke="#6366f1" stroke-width="1.8"/>
+  <rect x="15" y="150" width="162" height="32" rx="8" fill="#13111f"/>
+  <rect x="15" y="168" width="162" height="14" rx="0" fill="#13111f"/>
+  <text x="96" y="167" fill="#818cf8" font-size="9.5" font-weight="700" letter-spacing="1" text-anchor="middle">01 / REVIEWER</text>
+  <text x="96" y="196" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Code Reviewer</text>
+  <line x1="25" y1="204" x2="167" y2="204" stroke="#1e293b" stroke-width="1"/>
+  <text x="25" y="220" fill="#94a3b8" font-size="9.5">Reads source files</text>
+  <text x="25" y="236" fill="#94a3b8" font-size="9.5">Checks syntax, style</text>
+  <text x="25" y="252" fill="#94a3b8" font-size="9.5">Flags code smells</text>
+  <text x="25" y="268" fill="#94a3b8" font-size="9.5">Writes review report</text>
+  <line x1="15" y1="278" x2="177" y2="278" stroke="#1e293b" stroke-width="1"/>
+  <text x="96" y="292" fill="#6366f1" font-size="9" font-weight="600" text-anchor="middle">output: review.json</text>
+
+  <!-- CARD 2: Triager -->
+  <rect x="191" y="150" width="162" height="150" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.8"/>
+  <rect x="191" y="150" width="162" height="32" rx="8" fill="#1a1208"/>
+  <rect x="191" y="168" width="162" height="14" rx="0" fill="#1a1208"/>
+  <text x="272" y="167" fill="#fbbf24" font-size="9.5" font-weight="700" letter-spacing="1" text-anchor="middle">02 / TRIAGER</text>
+  <text x="272" y="196" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Issue Triager</text>
+  <line x1="201" y1="204" x2="343" y2="204" stroke="#1e293b" stroke-width="1"/>
+  <text x="201" y="220" fill="#94a3b8" font-size="9.5">Reads bug reports</text>
+  <text x="201" y="236" fill="#94a3b8" font-size="9.5">Categorizes severity</text>
+  <text x="201" y="252" fill="#94a3b8" font-size="9.5">Assigns priority rank</text>
+  <text x="201" y="268" fill="#94a3b8" font-size="9.5">Routes to queue</text>
+  <line x1="191" y1="278" x2="353" y2="278" stroke="#1e293b" stroke-width="1"/>
+  <text x="272" y="292" fill="#f59e0b" font-size="9" font-weight="600" text-anchor="middle">output: triage.json</text>
+
+  <!-- CARD 3: Summarizer -->
+  <rect x="367" y="150" width="162" height="150" rx="8" fill="#0f172a" stroke="#a855f7" stroke-width="1.8"/>
+  <rect x="367" y="150" width="162" height="32" rx="8" fill="#130c1c"/>
+  <rect x="367" y="168" width="162" height="14" rx="0" fill="#130c1c"/>
+  <text x="448" y="167" fill="#c084fc" font-size="9.5" font-weight="700" letter-spacing="1" text-anchor="middle">03 / SUMMARIZER</text>
+  <text x="448" y="196" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Content Summarizer</text>
+  <line x1="377" y1="204" x2="519" y2="204" stroke="#1e293b" stroke-width="1"/>
+  <text x="377" y="220" fill="#94a3b8" font-size="9.5">Reads long text/logs</text>
+  <text x="377" y="236" fill="#94a3b8" font-size="9.5">Extracts key points</text>
+  <text x="377" y="252" fill="#94a3b8" font-size="9.5">Compresses context</text>
+  <text x="377" y="268" fill="#94a3b8" font-size="9.5">Tokens: down 85%</text>
+  <line x1="367" y1="278" x2="529" y2="278" stroke="#1e293b" stroke-width="1"/>
+  <text x="448" y="292" fill="#a855f7" font-size="9" font-weight="600" text-anchor="middle">output: summary.md</text>
+
+  <!-- CARD 4: Code Analyzer -->
+  <rect x="543" y="150" width="162" height="150" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8"/>
+  <rect x="543" y="150" width="162" height="32" rx="8" fill="#091520"/>
+  <rect x="543" y="168" width="162" height="14" rx="0" fill="#091520"/>
+  <text x="624" y="167" fill="#7dd3fc" font-size="9.5" font-weight="700" letter-spacing="1" text-anchor="middle">04 / ANALYZER</text>
+  <text x="624" y="196" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Code Analyzer</text>
+  <line x1="553" y1="204" x2="695" y2="204" stroke="#1e293b" stroke-width="1"/>
+  <text x="553" y="220" fill="#94a3b8" font-size="9.5">Parses AST tree</text>
+  <text x="553" y="236" fill="#94a3b8" font-size="9.5">Checks complexity</text>
+  <text x="553" y="252" fill="#94a3b8" font-size="9.5">Detects dead code</text>
+  <text x="553" y="268" fill="#94a3b8" font-size="9.5">Dependency graph</text>
+  <line x1="543" y1="278" x2="705" y2="278" stroke="#1e293b" stroke-width="1"/>
+  <text x="624" y="292" fill="#38bdf8" font-size="9" font-weight="600" text-anchor="middle">output: ast_report.json</text>
+
+  <!-- CARD 5: Event Processor -->
+  <rect x="719" y="150" width="166" height="150" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.8"/>
+  <rect x="719" y="150" width="166" height="32" rx="8" fill="#091510"/>
+  <rect x="719" y="168" width="166" height="14" rx="0" fill="#091510"/>
+  <text x="802" y="167" fill="#4ade80" font-size="9.5" font-weight="700" letter-spacing="1" text-anchor="middle">05 / EVENT PROC.</text>
+  <text x="802" y="196" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Event Processor</text>
+  <line x1="729" y1="204" x2="875" y2="204" stroke="#1e293b" stroke-width="1"/>
+  <text x="729" y="220" fill="#94a3b8" font-size="9.5">Listens on queues</text>
+  <text x="729" y="236" fill="#94a3b8" font-size="9.5">Routes by event type</text>
+  <text x="729" y="252" fill="#94a3b8" font-size="9.5">Triggers sub-agents</text>
+  <text x="729" y="268" fill="#94a3b8" font-size="9.5">Logs to blackboard</text>
+  <line x1="719" y1="278" x2="885" y2="278" stroke="#1e293b" stroke-width="1"/>
+  <text x="802" y="292" fill="#10b981" font-size="9" font-weight="600" text-anchor="middle">output: event_log[]</text>
+
+  <!-- ── LLM ROUTER (SHARED) ── -->
+  <text x="24" y="324" fill="#475569" font-size="9" font-weight="600" letter-spacing="1.5">SHARED LLM ROUTER (Ollama Local ↔ OpenAI / Gemini Cloud)</text>
+  <rect x="15" y="332" width="870" height="60" rx="8" fill="#0a1020" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 3 LLM options -->
+  <rect x="28" y="344" width="240" height="38" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+  <text x="148" y="358" fill="#4ade80" font-size="10" font-weight="600" text-anchor="middle">① Ollama (Local)</text>
+  <text x="148" y="374" fill="#64748b" font-size="9" text-anchor="middle">Llama 3.2 / Mistral · Zero cost · Privacy</text>
+
+  <rect x="280" y="344" width="240" height="38" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1.2"/>
+  <text x="400" y="358" fill="#818cf8" font-size="10" font-weight="600" text-anchor="middle">② OpenAI (Cloud Fallback)</text>
+  <text x="400" y="374" fill="#64748b" font-size="9" text-anchor="middle">GPT-4o / gpt-4-turbo · Failover route</text>
+
+  <rect x="532" y="344" width="240" height="38" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="652" y="358" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="middle">③ Gemini (Cloud Fallback)</text>
+  <text x="652" y="374" fill="#64748b" font-size="9" text-anchor="middle">Gemini Pro · Secondary failover</text>
+
+  <!-- Circuit breaker note -->
+  <text x="790" y="360" fill="#64748b" font-size="9">Circuit breaker</text>
+  <text x="790" y="374" fill="#64748b" font-size="9">+ auto-retry</text>
+  <circle cx="779" cy="362" r="3.5" fill="#10b981" class="as-ind"/>
+
+  <!-- ── COMPOSITION EXAMPLES ── -->
+  <text x="24" y="414" fill="#475569" font-size="9" font-weight="600" letter-spacing="1.5">EXAMPLE COMPOSITIONS (How to Chain Scaffolds)</text>
+
+  <!-- Example 1: Code Review Pipeline -->
+  <rect x="15" y="422" width="420" height="58" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="27" y="440" fill="#818cf8" font-size="10" font-weight="600">Code Review Pipeline</text>
+  <path d="M27 460 L47 460" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-i)"/>
+  <text x="52" y="464" fill="#94a3b8" font-size="10">Analyzer</text>
+  <path d="M96 460 L116 460" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-i)"/>
+  <text x="121" y="464" fill="#94a3b8" font-size="10">Reviewer</text>
+  <path d="M167 460 L187 460" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-i)"/>
+  <text x="192" y="464" fill="#94a3b8" font-size="10">Summarizer</text>
+  <text x="270" y="464" fill="#64748b" font-size="9">→ PR-ready report in 90 sec</text>
+  <text x="27" y="474" fill="#475569" font-size="8.5">Blackboard: code → analysis → review → compressed summary</text>
+
+  <!-- Example 2: Support Triage Pipeline -->
+  <rect x="450" y="422" width="435" height="58" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="462" y="440" fill="#fbbf24" font-size="10" font-weight="600">Incident Triage Pipeline</text>
+  <path d="M462 460 L482 460" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-g)"/>
+  <text x="487" y="464" fill="#94a3b8" font-size="10">Event Processor</text>
+  <path d="M565 460 L585 460" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-g)"/>
+  <text x="590" y="464" fill="#94a3b8" font-size="10">Triager</text>
+  <path d="M626 460 L646 460" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#as-arr-g)"/>
+  <text x="651" y="464" fill="#94a3b8" font-size="10">Summarizer</text>
+  <text x="462" y="474" fill="#475569" font-size="8.5">Blackboard: raw_event → severity_level → priority_queue → incident_summary</text>
+
+  <!-- ── STATS BAR ── -->
+  <rect x="15" y="497" width="870" height="30" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <line x1="232" y1="502" x2="232" y2="521" stroke="#1e293b" stroke-width="1"/>
+  <line x1="449" y1="502" x2="449" y2="521" stroke="#1e293b" stroke-width="1"/>
+  <line x1="666" y1="502" x2="666" y2="521" stroke="#1e293b" stroke-width="1"/>
+  <text x="113" y="517" fill="#818cf8" font-size="10" font-weight="600" text-anchor="middle">5 Runnable Scaffolds</text>
+  <text x="340" y="517" fill="#4ade80" font-size="10" font-weight="600" text-anchor="middle">Node.js · Local Ollama</text>
+  <text x="557" y="517" fill="#c084fc" font-size="10" font-weight="600" text-anchor="middle">Blackboard State Pattern</text>
+  <text x="774" y="517" fill="#7dd3fc" font-size="10" font-weight="600" text-anchor="middle">Keyless · Runs Offline</text>
+
+  <!-- ── TECH TAGS ── -->
+  <text x="24" y="545" fill="#475569" font-size="9" font-weight="600" letter-spacing="1.5">DEPENDENCIES</text>
+  <rect x="15" y="553" width="65" height="20" rx="4" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="47" y="567" fill="#4ade80" font-size="9.5" font-weight="600" text-anchor="middle">Node.js</text>
+  <rect x="88" y="553" width="60" height="20" rx="4" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
+  <text x="118" y="567" fill="#7dd3fc" font-size="9.5" font-weight="600" text-anchor="middle">Ollama</text>
+  <rect x="156" y="553" width="60" height="20" rx="4" fill="rgba(148,163,184,0.06)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+  <text x="186" y="567" fill="#94a3b8" font-size="9.5" font-weight="600" text-anchor="middle">ESM JS</text>
+  <rect x="224" y="553" width="75" height="20" rx="4" fill="rgba(148,163,184,0.06)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+  <text x="261" y="567" fill="#94a3b8" font-size="9.5" font-weight="600" text-anchor="middle">Zero-key</text>
+  <rect x="307" y="553" width="95" height="20" rx="4" fill="rgba(148,163,184,0.06)" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+  <text x="354" y="567" fill="#94a3b8" font-size="9.5" font-weight="600" text-anchor="middle">Open Source</text>
+  <text x="415" y="567" fill="#475569" font-size="9.5">Extracted from production Agentic SDLC system — rewritten keyless for public review</text>
+
+</svg>
