@@ -12,6 +12,12 @@ All systems run offline with zero cost using Ollama. No API key needed to start.
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen.svg)
 
+<div align="center">
+
+![Agentic Systems — five systems, each a different agent topology](systems.svg)
+
+</div>
+
 ---
 
 ## The 5 Systems
