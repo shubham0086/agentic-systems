@@ -8,6 +8,8 @@ intended use.
 
 All systems run offline with zero cost using Ollama. No API key needed to start.
 
+> Full portfolio case study with live animations: [my-portfolio-github-io-beta-five.vercel.app/projects/agentic-systems.html](https://my-portfolio-github-io-beta-five.vercel.app/projects/agentic-systems.html)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen.svg)
@@ -123,8 +125,6 @@ The `visual/` folder contains `visual-systems.html` — a standalone animated di
 open visual/visual-systems.html
 # or: python -m http.server 8080 → localhost:8080/visual/visual-systems.html
 ```
-
-> Full portfolio case study with live animations: [my-portfolio-github-io-beta-five.vercel.app/projects/agentic-systems.html](https://my-portfolio-github-io-beta-five.vercel.app/projects/agentic-systems.html)
 
 ---
 
