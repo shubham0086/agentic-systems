@@ -124,7 +124,7 @@ open visual/visual-systems.html
 # or: python -m http.server 8080 → localhost:8080/visual/visual-systems.html
 ```
 
-> Full portfolio case study with live animations: [shubham0086.github.io/MyPortfolio.github.io/projects/agentic-systems.html](https://shubham0086.github.io/MyPortfolio.github.io/projects/agentic-systems.html)
+> Full portfolio case study with live animations: [my-portfolio-github-io-beta-five.vercel.app/projects/agentic-systems.html](https://my-portfolio-github-io-beta-five.vercel.app/projects/agentic-systems.html)
 
 ---
 
